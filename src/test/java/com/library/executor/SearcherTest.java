@@ -1,40 +1,49 @@
 package com.library.executor;
 
-import com.library.analyer.NgramAnalyzer;
 import com.library.model.PopSong;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import com.library.similarity.CustomBM25Similarity;
+import com.library.similarity.CustomSimilarity;
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.document.Document;
-import org.apache.lucene.document.FeatureField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.StoredFields;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
-import org.apache.lucene.search.similarities.*;
+import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.Similarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.springframework.stereotype.Service;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-@Slf4j
-public class Searcher {
-    Analyzer analyzer = new StandardAnalyzer();
+import static org.junit.jupiter.api.Assertions.*;
 
-    public List<PopSong> search(String text) throws ParseException, IOException {
-        Path indexPath = Path.of("/Users/ryujun-yeong/Documents/projects/common/lib/lucene/index");
+class SearcherTest {
+
+
+    Analyzer analyzer = new WhitespaceAnalyzer();
+    Path indexPath = Path.of("/Users/ryujun-yeong/Documents/projects/common/lib/lucene/index");
+
+
+    @BeforeEach
+    void setUp() throws IOException {
+
+    }
+
+    @Test
+    void test_search() throws IOException, ParseException {
+        String text = "uptown girl";
+
         Directory index = FSDirectory.open(indexPath);
-
         QueryParser lyricsQueryParser = new QueryParser("lyrics", analyzer);
         Query lyricQuery = lyricsQueryParser.parse(text);
 
@@ -52,15 +61,14 @@ public class Searcher {
         IndexReader reader = DirectoryReader.open(index);
         IndexSearcher searcher = new IndexSearcher(reader);
 
-//        ClassicSimilarity classicSimilarity = new ClassicSimilarity();
-//        searcher.setSimilarity(classicSimilarity);
-        BM25Similarity bm25Similarity = new BM25Similarity();
-        searcher.setSimilarity(bm25Similarity);
+//        CustomBM25Similarity customBM25Similarity = new CustomBM25Similarity();
+        Similarity similarity = new BM25Similarity(2, 0.9F);
+        searcher.setSimilarity(similarity);
 
         // 결국 Search를 할 때 스코어링이 되는 것이
         ScoreDoc[] hits = searcher.search(finalQuery, 10).scoreDocs;
         StoredFields storedFields = searcher.storedFields();
-        
+
         List<PopSong> popSongs = new ArrayList<>();
         for (int i = 0; i < hits.length; i++) {
             Document hitDoc = storedFields.document(hits[i].doc);
@@ -71,10 +79,10 @@ public class Searcher {
                     searcher.explain(finalQuery, hits[i].doc);
             System.out.println("----------------------");
             System.out.println("song = " + song);
-//            System.out.println("explanation = " + explanation.toString());
+            System.out.println("explanation = " + explanation.toString());
         }
         reader.close();
         index.close();
-        return popSongs;
     }
+
 }
