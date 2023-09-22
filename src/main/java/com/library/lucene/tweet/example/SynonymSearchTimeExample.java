@@ -1,7 +1,7 @@
 package com.library.lucene.tweet.example;
 
 
-import com.library.lucene.chapter8.analyzer.SynonymAnalyzer;
+import com.library.analyer.SynonymAnalyzer;
 import com.library.lucene.tweet.IndexService;
 import com.library.lucene.tweet.SearchService;
 import com.library.lucene.tweet.TweetCsvLoader;

@@ -1,7 +1,7 @@
 package com.library.lucene.chapter8.service;
 
 import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.analyzer.CustomKoreanAnalyzer;
+import com.library.analyer.CustomKoreanAnalyzer;
 import org.apache.lucene.document.*;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;

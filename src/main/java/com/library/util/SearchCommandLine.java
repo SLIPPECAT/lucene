@@ -1,4 +1,4 @@
-package com.library.lucene.util;
+package com.library.util;
 
 import org.springframework.boot.CommandLineRunner;
 

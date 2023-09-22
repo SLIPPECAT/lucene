@@ -37,10 +37,6 @@ public class Test {
         builder.add(new CharsRef("good"), new CharsRef("nice"), true);
         builder.add(new CharsRef("great"), new CharsRef("nice"), true);
 
-//        SynonymMap
-//        FilteringTokenFilter
-//        System.out.println(StopFilterFactory.availableTokenFilters());
-//        Tokenizer tokenizer = new NGramTokenizer(new LowerCaseFilter());
     }
 
 }

@@ -1,4 +1,4 @@
-package com.library.lucene.chapter8.filter;
+package com.library.filter;
 
 import org.apache.lucene.analysis.FilteringTokenFilter;
 import org.apache.lucene.analysis.TokenStream;

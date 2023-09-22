@@ -1,7 +1,7 @@
 package com.library.lucene.chapter8.example;
 
 import com.library.lucene.chapter8.*;
-import com.library.lucene.chapter8.analyzer.CustomKoreanAnalyzer;
+import com.library.analyer.CustomKoreanAnalyzer;
 import com.library.lucene.chapter8.service.IndexService;
 import com.library.lucene.chapter8.service.SearchService;
 import org.apache.lucene.index.DirectoryReader;

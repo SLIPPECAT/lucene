@@ -1,6 +1,6 @@
-package com.library.lucene.chapter8.analyzer;
+package com.library.analyer;
 
-import com.library.lucene.chapter8.filter.CustomLengthFilter;
+import com.library.filter.CustomLengthFilter;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.Tokenizer;

@@ -1,12 +1,12 @@
 package com.library.lucene.tweet;
 
-import com.library.lucene.util.AnalyzerService;
+import com.library.util.AnalyzerService;
 import org.apache.lucene.analysis.CharArraySet;
 import org.apache.lucene.analysis.core.StopAnalyzer;
 
 import java.util.List;
 
-public class TwitterTextAnalysisMain {
+public class    TwitterTextAnalysisMain {
     public static void main(String args[]) throws Exception{
         // CSV 파일에서 데이터를 읽는다.
         TweetCsvLoader csvUtil = new TweetCsvLoader();

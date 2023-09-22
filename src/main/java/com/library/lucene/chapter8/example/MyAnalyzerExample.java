@@ -2,7 +2,7 @@ package com.library.lucene.chapter8.example;
 
 import com.library.lucene.chapter8.CsvLoader;
 import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.analyzer.MyAnalyzer;
+import com.library.analyer.MyAnalyzer;
 import com.library.lucene.chapter8.service.AnalyzerService;
 
 

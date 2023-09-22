@@ -1,4 +1,4 @@
-package com.library.executor;
+package com.library.config;
 
 
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.library.lucene.dto;
+package com.library.synonym.dto;
 
 public class SynonymResponseDto {
 

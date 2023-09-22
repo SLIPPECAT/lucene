@@ -12,7 +12,6 @@ public class NgramAnalyzer extends Analyzer {
     @Override
     protected TokenStreamComponents createComponents(String fieldName) {
         Tokenizer tokenizer = new NGramTokenizer(2, 2);
-//        Tokenizer tokenizer = new StandardTokenizer();
         TokenStream filter = new NGramTokenFilter(tokenizer, 2);
         filter = new LowerCaseFilter(filter);
         return new TokenStreamComponents(tokenizer, filter);

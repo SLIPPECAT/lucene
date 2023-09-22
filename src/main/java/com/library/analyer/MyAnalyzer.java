@@ -1,4 +1,4 @@
-package com.library.lucene.chapter8.analyzer;
+package com.library.analyer;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.Tokenizer;

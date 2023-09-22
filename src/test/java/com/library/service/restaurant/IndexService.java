@@ -1,7 +1,7 @@
 package com.library.service.restaurant;
 
 import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.analyzer.CustomKoreanAnalyzer;
+import com.library.analyer.CustomKoreanAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;

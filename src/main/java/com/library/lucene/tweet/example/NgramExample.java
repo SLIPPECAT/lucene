@@ -1,6 +1,6 @@
 package com.library.lucene.tweet.example;
 
-import com.library.lucene.chapter8.analyzer.NgramAnalyzer;
+import com.library.analyer.NgramAnalyzer;
 import com.library.lucene.tweet.IndexService;
 import com.library.lucene.tweet.SearchService;
 import com.library.lucene.tweet.TweetCsvLoader;

@@ -1,4 +1,4 @@
-package com.library.lucene.dto;
+package com.library.synonym.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -2,18 +2,12 @@ package com.library.lucene.chapter8.example;
 
 import com.library.lucene.chapter8.CsvLoader;
 import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.analyzer.MyAnalyzer;
 import com.library.lucene.chapter8.service.AnalyzerService;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
 import org.apache.lucene.analysis.core.StopFilterFactory;
 import org.apache.lucene.analysis.custom.CustomAnalyzer;
-import org.apache.lucene.analysis.ko.KoreanNumberFilterFactory;
-import org.apache.lucene.analysis.ko.KoreanPartOfSpeechStopFilterFactory;
-import org.apache.lucene.analysis.ko.KoreanReadingFormFilterFactory;
-import org.apache.lucene.analysis.ko.KoreanTokenizerFactory;
 import org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilterFactory;
-import org.apache.lucene.analysis.ngram.NGramTokenizerFactory;
 import org.apache.lucene.analysis.standard.StandardTokenizerFactory;
 
 import java.io.IOException;

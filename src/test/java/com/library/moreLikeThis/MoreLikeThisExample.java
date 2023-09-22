@@ -2,7 +2,7 @@ package com.library.moreLikeThis;
 
 import com.library.lucene.chapter8.CsvLoader;
 import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.analyzer.CustomKoreanAnalyzer;
+import com.library.analyer.CustomKoreanAnalyzer;
 import com.library.service.restaurant.IndexService;
 import com.library.service.restaurant.SearchService;
 import org.apache.lucene.index.DirectoryReader;
