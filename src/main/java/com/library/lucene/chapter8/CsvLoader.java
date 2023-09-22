@@ -11,7 +11,7 @@ import java.util.List;
 public class CsvLoader {
     public List<RestaurantInfoVo> readRestaurantnfo(){
         // CSV 파일 경로를 설정한다.
-        String fileName = "/Users/ryujun-yeong/Documents/projects/common/lib/lucene/src/main/resources/data/restaurant_info.csv";
+        String fileName = "/Users/ryujun-yeong/Documents/lucene/src/main/resources/data/restaurant_info.csv";
         List<RestaurantInfoVo> restaurantInfoList = null;
 
         try(Reader reader = Files.newBufferedReader(Paths.get(fileName))){

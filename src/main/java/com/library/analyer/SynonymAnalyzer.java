@@ -2,11 +2,13 @@ package com.library.analyer;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.Tokenizer;
+import org.apache.lucene.analysis.ngram.NGramTokenizer;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.synonym.SynonymGraphFilter;
 import org.apache.lucene.analysis.synonym.SynonymMap;
 
 public class SynonymAnalyzer extends Analyzer {
+
     private SynonymMap synonymMap;
 
     public SynonymAnalyzer(SynonymMap synonymMap) {
@@ -16,7 +18,7 @@ public class SynonymAnalyzer extends Analyzer {
 
     @Override
     protected TokenStreamComponents createComponents(String fieldName) {
-        Tokenizer tokenizer = new StandardTokenizer();
+        Tokenizer tokenizer = new NGramTokenizer();
         SynonymGraphFilter synonymGraphFilter = null;
         try {
             synonymGraphFilter = new SynonymGraphFilter(tokenizer, synonymMap, true);

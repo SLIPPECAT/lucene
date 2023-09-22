@@ -3,7 +3,6 @@ package com.library.lucene.tweet.example;
 
 import com.library.analyer.SynonymAnalyzer;
 import com.library.synonym.dto.SynonymRequestDto;
-import com.library.lucene.service.SynonymService;
 import com.library.lucene.tweet.IndexService;
 import com.library.lucene.tweet.SearchService;
 import com.library.lucene.tweet.TweetCsvLoader;
@@ -49,9 +48,9 @@ public class SynonymIndexTimeExample {
             e.printStackTrace();
         }
     }
-    private void relateSynonym(String target, String synonym){
-        SynonymService synonymService = new SynonymService();
-        synonymService.relateSynonym(new SynonymRequestDto(target, synonym));
-    }
+//    private void relateSynonym(String target, String synonym){
+//        SynonymService synonymService = new SynonymService();
+//        synonymService.relateSynonym(new SynonymRequestDto(target, synonym));
+//    }
 
 }
