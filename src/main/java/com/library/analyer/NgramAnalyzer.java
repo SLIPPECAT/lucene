@@ -14,7 +14,7 @@ public class NgramAnalyzer extends Analyzer {
     protected TokenStreamComponents createComponents(String fieldName) {
 //        Tokenizer tokenizer = new NGramTokenizer();
         Tokenizer tokenizer = new KoreanTokenizer();
-        TokenStream filter = new NGramTokenFilter(tokenizer, 1, 2, true);
+        TokenStream filter = new NGramTokenFilter(tokenizer, 2, 2, true);
         filter = new LowerCaseFilter(filter);
         return new TokenStreamComponents(tokenizer, filter);
     }

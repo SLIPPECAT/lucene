@@ -1,9 +1,9 @@
-package com.library.lucene.chapter8.example;
+package com.library.scenario.chapter8.example;
 
-import com.library.lucene.chapter8.CsvLoader;
-import com.library.lucene.chapter8.RestaurantInfoVo;
+import com.library.scenario.chapter8.CsvLoader;
+import com.library.scenario.chapter8.RestaurantInfoVo;
 import com.library.analyer.CustomLengthAnalyzer;
-import com.library.lucene.chapter8.service.AnalyzerService;
+import com.library.scenario.chapter8.service.AnalyzerService;
 
 import java.io.IOException;
 import java.util.List;

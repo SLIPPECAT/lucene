@@ -1,8 +1,8 @@
-package com.library.lucene.chapter8.example;
+package com.library.scenario.chapter8.example;
 
-import com.library.lucene.chapter8.CsvLoader;
-import com.library.lucene.chapter8.RestaurantInfoVo;
-import com.library.lucene.chapter8.service.AnalyzerService;
+import com.library.scenario.chapter8.CsvLoader;
+import com.library.scenario.chapter8.RestaurantInfoVo;
+import com.library.scenario.chapter8.service.AnalyzerService;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
 import org.apache.lucene.analysis.core.StopFilterFactory;
