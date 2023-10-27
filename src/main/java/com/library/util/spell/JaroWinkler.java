@@ -1,4 +1,4 @@
-package com.library.util;
+package com.library.util.spell;
 
 import org.apache.commons.text.similarity.JaroWinklerDistance;
 

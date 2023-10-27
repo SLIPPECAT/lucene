@@ -1,8 +1,11 @@
-package com.library.util;
+package com.library.util.spell;
 
-public class Jaccard {
+public class Jaccard implements StringDistance{
 
-    public float jaccard(char[] s, char[] t){
+    @Override
+    public float getDistance(String target, String Other) {
+        char[] s = target.toCharArray();
+        char[] t = Other.toCharArray();
         int intersection = 0;
         int union = s.length + t.length;
         boolean[] sdup = new boolean[s.length];
