@@ -19,40 +19,51 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'junit:junit:4.13.1'
-    testImplementation 'junit:junit:4.13.1'
-    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    // lucene
-    implementation group: 'org.apache.lucene', name: 'lucene-core', version: '9.7.0'
-    implementation group: 'org.apache.lucene', name: 'lucene-queryparser', version: '9.7.0'
-    implementation 'org.apache.lucene:lucene-suggest:9.7.0'
-
-//    implementation group: 'org.apache.lucene', name: 'lucene-analyzers-common', version: '8.11.2'
-//    implementation group: 'org.apache.lucene', name: 'lucene-analyzers-nori', version: '8.11.2'
-    implementation files('src/main/resources/lib/lucene-analysis-common-9.7.0.jar')
-    implementation files('src/main/resources/lib/lucene-analysis-common-9.7.0.jar')
+    compileOnly 'org.projectlombok:lombok'
+    // korean to english
+    implementation 'net.sf.jwordnet:jwnl:1.4_rc3'
+    //    ==================== [ Korean English Keystroke Transform ] ====================
+    implementation 'com.github.arinyaho:inko4j:1.1.1'
+    //    ==================== [ Korean into Roman characters ] ====================
+    implementation 'net.crizin:korean-romanizer:2.0.1'
+    //  ==================== [ lucene phonetic search ] ====================
+    runtimeOnly 'org.apache.lucene:lucene-analysis-phonetic:9.8.0'
+    implementation 'org.apache.lucene:lucene-analyzers-phonetic:8.11.2'
+    //    ==================== [ lucene core ] ====================
+    implementation 'org.apache.lucene:lucene-core:9.8.0'
+    //    ==================== [ lucene modules ] ====================
+    implementation 'org.apache.lucene:lucene-queryparser:9.8.0'
+    implementation 'org.apache.lucene:lucene-queries:9.8.0'
+    implementation 'org.apache.lucene:lucene-memory:9.8.0'
+    implementation 'org.apache.lucene:lucene-analysis-common:9.8.0'
+    implementation 'org.apache.lucene:lucene-highlighter:9.8.0'
+    implementation 'org.apache.lucene:lucene-facet:9.8.0'
+    implementation 'org.apache.lucene:lucene-suggest:9.8.0'
+    implementation 'org.apache.lucene:lucene-grouping:9.8.0'
+//    runtimeOnly 'org.apache.lucene:lucene-analysis-nori:9.8.0'
     implementation files('src/main/resources/lib/lucene-analysis-nori-9.7.0.jar')
-    implementation files('src/main/resources/lib/lucene-memory-9.7.0.jar')
-
-
+    implementation 'com.github.jitpack:gradle-simple:v1.1'
     implementation group: 'com.opencsv', name: 'opencsv', version: '5.8'
-
-//    implementation files('src/main/resources/lib/arirang.lucene-analyzer-7.2.1.1.jar')
-//    implementation files('src/main/resources/lib/arirang-morph-1.1.4.jar')
-//    implementation files('src/main/resources/lib/kkma-2.1.jar')
-
-    // 은전 한닢 형태소 분석기
+//    ==================== [ korean analyzer ] ====================
+    implementation files('src/main/resources/lib/kkma-2.1.jar')
+    implementation files('src/main/resources/lib/jhannanum.jar')
+    implementation files('src/main/resources/lib/arirang-morph-1.1.0.jar')
+    implementation 'com.github.shin285:KOMORAN:3.3.4'
 //    implementation 'org.bitbucket.eunjeon:seunjeon_2.12:1.5.0'
-
-
+    //    ==================== [ library for hangul edit distance ] ====================
+    implementation 'com.github.inkyfox:korean-post-position-util:1.0.3'
+//    implementation 'com.github.cocodrino:hangul-utils:1.2.2' // 라이브러리 버전에 따라 변경할 수 있음
+    implementation 'io.github.huacnlee:autocorrect-java:2.8.5'
+    //    ==================== [ library for test ] ====================
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
 
 tasks.named('test') {
     useJUnitPlatform()
