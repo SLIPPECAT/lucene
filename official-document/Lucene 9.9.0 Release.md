@@ -1,7 +1,7 @@
 ## 2023 12월 4일 Apache Lucene™ 9.9.0 available
 > https://lucene.apache.org/core/corenews.html#apache-lucenetm-990-available
 
-### Lucene 9.8.0 Release Highlights:
+### Lucene 9.9.0 Release Highlights:
 
 #### 새로운 기능
 
